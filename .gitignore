@@ -1,2 +1,5 @@
+.vscode
+# Ignores Visual Studio Code config files.
+
 *.class
 # Ignores compiled Java files.
