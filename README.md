@@ -17,7 +17,7 @@ hau-coding-activities/ # repository
 |  |--README.md # course details
 ```
 
-This is the rough folder structure of the repository. The naming convention for each directory should be in [`kebab-case`](https://developer.mozilla.org/en-US/docs/Glossary/Kebab_case). Folders like `subject` will pertain to the class code and subject abbreviation with [`/2062-6OOp`](./2062-6OOP/) as an example. The `year-month-date` directory consists of numerical values which should end up like [`/2025-06-16`](./2062-6OOP/2025-06-16/), meaning it is an activity that happened on **June 16, 2025**. 
+This is the rough folder structure of the repository. The naming convention for each directory should be in [`kebab-case`](https://developer.mozilla.org/en-US/docs/Glossary/Kebab_case). Activities will be stored inside their respective subjects and starting date. Folders like `subject` will pertain to the class code and subject abbreviation with [`2062-6OOP/`](./2062-6OOP/) as an example. The `year-month-date` directory consists of numerical values which should end up like [`2025-06-16/`](./2062-6OOP/2025-06-16/), meaning it is an activity that happened on **June 16, 2025**. 
 
 ### Edge Case
 
@@ -32,7 +32,7 @@ hau-coding-activities/ #repository
 |  |  |--...
 ```
 
-In a situation where multiple activities occur on a single date, it will have another number at the end indicating the activity number. Instead of `2024-12-16`, The directory name will be `2024-12-16-1` for the first activity, `2024-12-16-2` for the second, and so on.
+In a situation where multiple activities occur on a single date, it will have another number at the end indicating the activity number. Instead of `2024-12-16/`, The directory name will be `2024-12-16-1/` for the first activity, `2024-12-16-2/` for the second, and so on.
 
 ## License
 
