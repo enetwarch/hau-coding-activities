@@ -1,6 +1,6 @@
 # Holy Angel University Coding Activities
 
-This repository is a summation of all the coding activities we have done in [Holy Angel University](https://www.hau.edu.ph/). These activities were designed to help us strengthen out foundation and understanding of programming concepts through the use of practical hands-on tasks. 
+This repository is a summation of all the coding activities we have done in [Holy Angel University](https://www.hau.edu.ph/). These activities were designed to help us strengthen out foundation and understanding of programming concepts through the use of practical hands-on tasks. All of the files here are my personal solutions to the given problem from [HAU Canvas](https://hau.instructure.com/). Instructions are copy pasted or manually written in the [README.md](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) file of the activity directory.
 
 ## Folder Structure
 
