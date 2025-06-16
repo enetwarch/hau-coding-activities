@@ -8,7 +8,7 @@ Create each Java application according to the problem requirements in Questions 
 
 Create a class based on the UML attached. 
 
-[patient.pdf](./assets/patient.pdf)
+[patient.pdf](./docs/patient.pdf)
 
 ### Question 2
 
@@ -18,4 +18,4 @@ Create a class with the main() method to test the Patient class. Instantiate two
 
 Upload a sample output screenshot of the class with the main() method having Patient objects in the provided field below.
 
-![Sample Output](./assets/sample-output.png)
+![Sample Output](./docs/sample-output.png)
