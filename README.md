@@ -5,13 +5,13 @@ This repository is a collection of all the coding activities we have done in [**
 ## Folder Structure
 
 ```yaml
-/hau-coding-activities # repository
-|--/2062-6OOP # subject
-|  |--/2025-06-16 # activity year-month-date
-|  |  |--/docs # documentation files
+hau-coding-activities/ # repository
+|--2062-6OOP/ # subject
+|  |--2025-06-16/ # activity year-month-date
+|  |  |--docs/ # documentation files
 |  |  |  |--image.png
 |  |  |  |--document.pdf
-|  |  |--/src # source code
+|  |  |--src/ # source code
 |  |  |  |--Main.java
 |  |  |--README.md # activity instructions
 |  |--README.md # course details
@@ -22,14 +22,14 @@ This is the rough folder structure of the repository. The naming convention for 
 ### Edge Case
 
 ```yaml
-/hau-coding-activities #repository
-|--/6PROGSDATS # subject
-|  |--/2024-12-16-1 # first activity 
-|  |  |--/...
-|  |--/2024-12-16-2 # second activity
-|  |  |--/...
-|  |--/2024-12-16-3 # third activity
-|  |  |--/...
+hau-coding-activities/ #repository
+|--6PROGSDATS/ # subject
+|  |--2024-12-16-1/ # first activity 
+|  |  |--...
+|  |--2024-12-16-2/ # second activity
+|  |  |--...
+|  |--2024-12-16-3/ # third activity
+|  |  |--...
 ```
 
 In a situation where multiple activities occur on a single date, it will have another number at the end indicating the activity number. Instead of `2024-12-16`, The directory name will be `2024-12-16-1` for the first activity, `2024-12-16-2` for the second, and so on.
