@@ -1,3 +1,6 @@
+# Hugo P. Molina
+# ICT-102
+
 # These lines of code allow the user to input the names.
 FIRST_NAME = input("Input the first name: ")
 SECOND_NAME = input("Input the second name: ")
