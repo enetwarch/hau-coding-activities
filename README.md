@@ -7,7 +7,7 @@ This repository is a collection of all the coding activities we have done in [**
 ```yaml
 hau-coding-activities/ # repository
 |--year-2/ # year level
-|  |--2062-6oop/ # subject
+|  |--6oop/ # subject
 |  |  |--2025-06-16-1/ # activity year-month-date-number
 |  |  |  |--docs/ # documentation files
 |  |  |  |  |--image.png
@@ -18,7 +18,7 @@ hau-coding-activities/ # repository
 |  |  |--README.md # course details
 ```
 
-This is the rough folder structure of the repository. The naming convention for each directory should be in [`kebab-case`](https://developer.mozilla.org/en-US/docs/Glossary/Kebab_case). The first folders to show up will be the `year level` which is [`year-2`](./year-2/) in this example. Activities will be stored inside their respective subjects and starting date. Folders like `subject` will pertain to the class code and subject abbreviation with [`2062-6oop/`](./year-2/2062-6oop/) as an example. The `year-month-date-number` directory consists of numerical values which should end up like [`2025-06-16-1/`](./year-2/2062-6oop/2025-06-16/), meaning it is an activity that happened on **June 16, 2025**. The last number in the `year-month-date-number` directory indicates the activity number, which in most cases will be **1** because most days will only have one activity.
+This is the rough folder structure of the repository. The naming convention for each directory should be in [`kebab-case`](https://developer.mozilla.org/en-US/docs/Glossary/Kebab_case). The first folders to show up will be the `year level` which is [`year-2`](./year-2/) in this example. Activities will be stored inside their respective subjects and starting date. Folders like `subject` will pertain to the subject abbreviation with [`6oop/`](./year-2/6oop/) as an example. The `year-month-date-number` directory consists of numerical values which should end up like [`2025-06-16-1/`](./year-2/6oop/2025-06-16/), meaning it is an activity that happened on **June 16, 2025**. The last number in the `year-month-date-number` directory indicates the activity number, which in most cases will be **1** because most days will only have one activity.
 
 ## License
 
