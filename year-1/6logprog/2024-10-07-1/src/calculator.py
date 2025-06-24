@@ -55,16 +55,16 @@ while True:
       # Prints out the result and records it.
       print(f"Result: {result}")
       history_record.append(result)
-
     case 5:
       # Prints out the current history record.
-      for i, history in enumerate(history_record):
-        print(f"Result {i + 1}: {history}")
-      
+      if len(history_record) == 0:
+        print("History record is empty.")
+      else:
+        for i, history in enumerate(history_record):
+          print(f"Result {i + 1}: {history}")
     case 6:
-      # Exits the program with a program terminated message.
-      print("Program terminated.")
-      exit(0)
+      # Breaks out of the infinite while True loop.
+      break
 
     case _:
       # This is the default case which prints out this statement if the user input is invalid.
@@ -74,3 +74,7 @@ while True:
   input("Would you like to proceed? (Press enter)")
   # Prints an empty space after every cycle of the loop for visual separation.
   print()
+
+# Exits the program with a program terminated message.
+print("Program terminated.")
+exit(0)
