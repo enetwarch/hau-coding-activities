@@ -7,32 +7,32 @@
 print("Weekly Pay Slip")
 
 # Asks for the user input on the following fields.
-EMPLOYEE_NAME: str = str(input("Employee Name: "))
-HOURS_WORKED: int = int(input("Hours Worked: "))
-OVERTIME_HOURS: int = int(input("Overtime Hours: "))
-HOURLY_RATE: float = float(input("Hourly Rate: ₱"))
+employee_name: str = input("Employee Name: ")
+hours_worked: int = int(input("Hours Worked: "))
+overtime_hours: int = int(input("Overtime Hours: "))
+hourly_rate: float = float(input("Hourly Rate: ₱"))
 
 # Initializes self documenting and well named variables to help calculations.
-OVERTIME_RATE: float = 1.25
-INCOME_TAX_RATE: float = 0.12
-COOPERATIVE_SHARES_RATE: float = 0.035
+overtime_rate: float = 1.25
+income_text_rate: float = 0.12
+cooperative_shares_rate: float = 0.035
 
 # Calculates the output based on the formula given on the instructions.
-GROSS_PAY: float = (HOURS_WORKED * HOURLY_RATE) + (OVERTIME_HOURS * HOURLY_RATE * OVERTIME_RATE)
-INCOME_TAX: float = GROSS_PAY * INCOME_TAX_RATE
-COOPERATIVE_SHARES: float = GROSS_PAY * COOPERATIVE_SHARES_RATE
-UNION_DUES: float = 135
-TOTAL: float = INCOME_TAX + COOPERATIVE_SHARES + UNION_DUES
-NET_PAY: float = GROSS_PAY - TOTAL
+gross_pay: float = (hours_worked * hourly_rate) + (overtime_hours * hourly_rate * overtime_rate)
+income_text: float = gross_pay * income_text_rate
+cooperative_shares: float = gross_pay * cooperative_shares_rate
+union_dues: float = 135
+total: float = income_text + cooperative_shares + union_dues
+net_pay: float = gross_pay - total
 
 # Prints the output as requested by the instructions.
-print(f"Gross Pay: ₱{GROSS_PAY:,.2f}")
+print(f"Gross Pay: ₱{gross_pay:,.2f}")
 print("Deductions:")
-print(f"\tIncome Tax: ₱{INCOME_TAX:,.2f}")
-print(f"\tCooperative Shares: ₱{COOPERATIVE_SHARES:,.2f}")
-print(f"\tUnion Dues: ₱{UNION_DUES:,.2f}")
-print(f"\tTotal: ₱{TOTAL:,.2f}")
-print(f"Net Pay: ₱{NET_PAY:,.2f}")
+print(f"\tIncome Tax: ₱{income_text:,.2f}")
+print(f"\tCooperative Shares: ₱{cooperative_shares:,.2f}")
+print(f"\tUnion Dues: ₱{union_dues:,.2f}")
+print(f"\tTotal: ₱{total:,.2f}")
+print(f"Net Pay: ₱{net_pay:,.2f}")
 
 # Exits the program.
 exit(0)
