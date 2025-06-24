@@ -20,6 +20,10 @@ hau-coding-activities/ # repository
 
 This is the rough folder structure of the repository. The naming convention for each directory should be in [`kebab-case`](https://developer.mozilla.org/en-US/docs/Glossary/Kebab_case). The first folders to show up will be the `year level` which is [`year-2`](./year-2/) in this example. Activities will be stored inside their respective subjects and starting date. Folders like `subject` will pertain to the subject abbreviation with [`6oop/`](./year-2/6oop/) as an example. The `year-month-date-number` directory consists of numerical values which should end up like [`2025-06-16-1/`](./year-2/6oop/2025-06-16/), meaning it is an activity that happened on **June 16, 2025**. The last number in the `year-month-date-number` directory indicates the activity number, which in most cases will be **1** because most days will only have one activity.
 
+### Files
+
+Most files will not follow the naming convention specified in the instructions. Files will have semantic naming if the activity just consists of one file like `calculator.py`. If the activity requires multiple files working together, the file that contains the main method or entry point will be named `main.*` with * referring to any extension. Capitalization and naming for each file will ultimately depend on that language's naming convention and practices.
+
 ## License
 
 This project is licensed under the [MIT license](./LICENSE).
