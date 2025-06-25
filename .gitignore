@@ -1,2 +1,12 @@
+# Compiled Java files
 *.class
-# Ignores compiled Java files.
+
+# IDE folders
+.vscode/
+.idea/
+*.iml
+
+# Logs and backups
+*.log
+*.bak
+*.tmp
