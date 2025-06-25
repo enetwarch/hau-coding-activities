@@ -124,7 +124,7 @@ public class Main {
         if (input >= min && input <= max) return input;
         throw new NumberFormatException();
       } catch (NumberFormatException exception) {
-        System.out.printf("INPUT ERROR. Only accepts values %,.2f to %,.2f\n", min, max);
+        System.out.printf("INPUT ERROR. Only accepts values %,.2f to %,.2f.\n", min, max);
       }
     }
   }
