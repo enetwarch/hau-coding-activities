@@ -10,3 +10,7 @@
 *.log
 *.bak
 *.tmp
+
+# I/O files
+*.csv
+*.txt
