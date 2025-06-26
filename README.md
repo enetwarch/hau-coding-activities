@@ -31,7 +31,7 @@ This is the rough repository structure of the repository. The naming convention 
 
 ### File Naming
 
-Most files will not follow the naming convention specified in the instructions. Files will have semantic naming if the activity just consists of one file like `calculator.py`. If the activity requires multiple files working together, the file that contains the main method or entry point will be named `main.*` with * referring to any extension. Capitalization and naming for each file will ultimately depend on that language's naming convention and practices. Sensitive activity files and some quizzes will not be included in this repository.
+Most files will not follow the naming convention specified in the instructions. Files will have semantic naming if the activity just consists of one file like `calculator.py`. If the activity requires multiple files working together, the file that contains the main method or entry point will be named `main.*` with * referring to any extension. As much as possible, all classes and functions will  live in one file for easy compilation, unless the instructions explicitly mention that they have to be separate. Capitalization and naming for each file will ultimately depend on that language's naming convention and practices. Sensitive activity files and some quizzes will not be included in this repository.
 
 ### Code Comments 
 
