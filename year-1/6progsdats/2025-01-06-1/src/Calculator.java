@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-// Main class that will be responsible for calculations.
+// This is the main class that will be responsible for calculations.
 // Also contains the main entry point or main method of the program.
 // The main method will serve as the interface for the program and it is based on the sample output.
 // Just by reading the flow of the main method, what it does will be self-explanatory as it aligns with the sample output.
@@ -21,18 +21,19 @@ import java.util.Scanner;
 // After the loop is broken, all students and their details will be printed out using a for loop.
 // The average grade of all students and the highest average will then be calculated and printed as well.
 // Lastly, the scanner will get closed and the program will be exited.
-public class Main {
+public class Calculator {
   @SuppressWarnings("ConvertToTryWithResources")
   public static void main(String[] args) {
+    final Scanner scanner = new Scanner(System.in);
     final List<Student> studentList = new ArrayList<>();
 
     while (true) { 
       final Student student = new Student()
-        .setName(getStringInput("Enter Student Name: "))
-        .setQuizScore(getDoubleInput("Enter Quiz Score (0-100): ", 0, 100))
-        .setAssignmentScore(getDoubleInput("Enter Assignment Score (0-100): ", 0, 100))
-        .setExamScore(getDoubleInput("Enter Exam Score (0-100): ", 0, 100))
-        .setProjectScore(getDoubleInput("Enter Project Score (0-100): ", 0, 100));
+        .setName(Input.getStringInput(scanner, "Enter Student Name: "))
+        .setQuizScore(Input.getDoubleInput(scanner, "Enter Quiz Score (0-100): ", 0, 100))
+        .setAssignmentScore(Input.getDoubleInput(scanner, "Enter Assignment Score (0-100): ", 0, 100))
+        .setExamScore(Input.getDoubleInput(scanner, "Enter Exam Score (0-100): ", 0, 100))
+        .setProjectScore(Input.getDoubleInput(scanner, "Enter Project Score (0-100): ", 0, 100));
       student
         .setFinalGrade(calculateFinalGrade(
           student.getQuizScore(), 
@@ -43,7 +44,7 @@ public class Main {
         .setLetterGrade(calculateLetterGrade(student.getFinalGrade()));
       studentList.add(student);
 
-      if (!getBooleanInput("Would you like to add another student? (y/n): ")) break;
+      if (!Input.getBooleanInput(scanner, "Would you like to add another student? (y/n): ")) break;
       System.out.printf("\n");
     }
     System.out.printf("\n");
@@ -65,9 +66,6 @@ public class Main {
     scanner.close();
     System.exit(0);
   }
-
-  // Initializes the scanner here to make it accessible throughout the entire class.
-  private static final Scanner scanner = new Scanner(System.in);
 
   // This function returns the calculated final grade based on the weight distribution from the instructions.
   // Quizzes = 20%, Assignments = 30%, Exams = 30%, Projects = 20%.
@@ -101,44 +99,145 @@ public class Main {
   private static double calculateHighestFinalGrade(List<Student> studentList) {
     return studentList.stream().mapToDouble((student) -> student.getFinalGrade()).max().orElse(0);
   }
+}
 
+// This class will only be used as an object to store data.
+// It will have the required fields for students based on the instructions.
+class Student {
+  private String name;
+  private double quizScore;
+  private double assignmentScore;
+  private double examScore;
+  private double projectScore;
+  private double finalGrade;
+  private char letterGrade;
+
+  // There are no parameters for the student constructor because it will only set default values.
+  // To set these values, I am using a semi-builder pattern for a chained style Student object creation.
+  // The protected keyword makes the constructor accessible by subclasses or same package classes.
+  protected Student() {
+    this.name = "Unknown";
+    this.quizScore = 0;
+    this.assignmentScore = 0;
+    this.examScore = 0;
+    this.projectScore = 0;
+    this.finalGrade = 0;
+    this.letterGrade = 'F';
+  }
+
+  // These setter methods will be returning the Student object back to allow method chaining.
+  // The Student will still be mutated regardless, but it is only for method chaining fluency.
+
+  public Student setName(String name) {
+    this.name = name;
+    return this;
+  }
+
+  public Student setQuizScore(double quizScore) {
+    this.quizScore = quizScore;
+    return this;
+  }
+
+  public Student setAssignmentScore(double assignmentScore) {
+    this.assignmentScore = assignmentScore;
+    return this;
+  }
+
+  public Student setExamScore(double examScore) {
+    this.examScore = examScore;
+    return this;
+  }
+
+  public Student setProjectScore(double projectScore) {
+    this.projectScore = projectScore;
+    return this;
+  }
+
+  public Student setFinalGrade(double finalGrade) {
+    this.finalGrade = finalGrade;
+    return this;
+  }
+
+  public Student setLetterGrade(char letterGrade) {
+    this.letterGrade = letterGrade;
+    return this;
+  }
+
+  // The following getters will be pretty normal.
+  // They are here to make the encapsulated private data fields accessible.
+
+  public String getName() {
+    return this.name;
+  }
+
+  public double getQuizScore() {
+    return this.quizScore;
+  }
+
+  public double getAssignmentScore() {
+    return this.assignmentScore;
+  }
+
+  public double getExamScore() {
+    return this.examScore;
+  }
+
+  public double getProjectScore() {
+    return this.projectScore;
+  }
+
+  public double getFinalGrade() {
+    return this.finalGrade;
+  }
+
+  public char getLetterGrade() {
+    return this.letterGrade;
+  }
+}
+
+// This class is here to provide utility and it contains input methods with validation.
+// The Scanner object will be passed in every function here to apply the dependency injection pattern.
+class Input {
   // A utility function that gets the user String input.
   // This method only prints the input prompt and returns the user input.
   // There are no input validations involved here because every user input is basically a string anyway.
-  private static String getStringInput(String inputPrompt) {
+  // The trim method removes excess whitespace the user might've accidentally inputted.
+  public static String getStringInput(Scanner scanner, String inputPrompt) {
     System.out.printf("%s", inputPrompt);
-    return scanner.nextLine();
+    return scanner.nextLine().trim();
   }
 
   // A utility function that gets the user double input.
-  // This function also includes input validation which is another requirement from the instructions.
+  // This function also includes input validation for when the user does not input a double or is out of bounds.
   // Basically, the way this function works is it runs on an infinite loop until it returns a valid user input.
-  // If the user input is valid, it will print out an error message and go back to the top of the loop agian.
+  // If the user input is valid, it will print out an error message and go back to the top of the loop again.
   // Double.parseDouble() is used here to directly avoid the bugs from non-nextLine() scanner methods.
-  private static double getDoubleInput(String inputPrompt, double min, double max) { 
+  // The thrown exception has a message for readability, but the catch block will print its own message.
+  public static double getDoubleInput(Scanner scanner, String inputPrompt, double min, double max) { 
     while (true) { 
       try {
         System.out.printf("%s", inputPrompt);
         final double input = Double.parseDouble(scanner.nextLine());
         
         if (input >= min && input <= max) return input;
-        throw new NumberFormatException();
+        throw new IllegalArgumentException("Invalid input.");
       } catch (NumberFormatException exception) {
         System.out.printf("INPUT ERROR. Only accepts values %,.2f to %,.2f.\n", min, max);
       }
     }
   }
 
-  // Last utility function that gets the user input.
-  // This one has a bit of input validation, it only accepts value 'y' (true) and 'n' (false).
-  // It will throw an error otherwise and loop back in this infinite loop.
-  private static boolean getBooleanInput(String inputPrompt) {
+  // A utility function that gets the user input in boolean form.
+  // The input validation step for this method is that it only accepts fixed values which are:
+  // "y" or "yes" (true) and "n" or "no" (false) all of which are case-insensitive and whitespace safe due to trim.
+  // It will print an error message otherwise and loop back in this infinite loop.
+  public static boolean getBooleanInput(Scanner scanner, String inputPrompt) {
     while (true) {
       System.out.printf("%s", inputPrompt);
-      final char input = scanner.nextLine().toLowerCase().charAt(0);
+      final String input = scanner.nextLine().trim().toLowerCase();
 
-      if (input == 'y') return true;
-      if (input == 'n') return false;
+      if (input.equals("y") || input.equals("yes")) return true;
+      if (input.equals("n") || input.equals("no")) return false;
 
       System.out.printf("INPUT ERROR. Only accepts values 'y' and 'n'.\n");
     }

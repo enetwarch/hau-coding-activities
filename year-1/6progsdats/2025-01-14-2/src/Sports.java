@@ -11,20 +11,19 @@ import java.util.Scanner;
 public class Sports {
   @SuppressWarnings("ConvertToTryWithResources")
   public static void main(String[] args) {
+    final Scanner scanner = new Scanner(System.in);
+
     while (true) {
       displayMenu();
-      if (selectSport() == 5) break;
+      if (selectSport(scanner) == 5) break;
 
-      inputBuffer();
+      Input.inputBuffer(scanner);
       System.out.printf("\n");
     }
 
     scanner.close();
     System.exit(0);
   }
-
-  // Initializes the scanner in private static keywords to make it accessible only throughout this class.
-  private static final Scanner scanner = new Scanner(System.in);
 
   // A simple void menu whose sole purpose is to print the options available to the user.
   // This is a slight overabstraction in my opinion, but it is a requirement in the instructions.
@@ -41,8 +40,8 @@ public class Sports {
   // The way it handles the user input is that it basically prints out a brief description of the sport the user chose.
   // It is a slightly quirky method, but it will be bad in practice because of the sheer amount of side effects.
   // Once again, another overabstraction that would be fine and readable if it stayed in main (imo).
-  private static int selectSport() {
-    final int input = getIntInput("Enter your choice: ", 1, 5);
+  private static int selectSport(Scanner scanner) {
+    final int input = Input.getIntInput(scanner, "Enter your choice: ", 1, 5);
 
     switch (input) {
       case 1 -> basketball();
@@ -73,30 +72,35 @@ public class Sports {
   private static void cricket() {
     System.out.printf("You selected Cricket! A bat-and-ball game rich in tradition and played across the world.\n");
   }
+}
 
-  // A utility function that gets the user double input.
+// This class is here to provide utility and it contains input methods with validation.
+// The Scanner object will be passed in every function here to apply the dependency injection pattern.
+class Input {
+  // A utility function that gets the user integer input.
   // This function features input validation for when the user does not input an integer or when its out of range.
   // The function runs on an infinite loop that can only be broken when the user inputs a valid integer.
-  // An error message will always be printed if the user insists on inputting an invalid integer.
+  // A predetermined error message will always be printed if the user insists on inputting an invalid integer.
   // Integer.parseInt() is used to remove the need to absorb the enter key on a non-nextLine() scanner method.
-  private static int getIntInput(String inputPrompt, int min, int max) { 
+  // The thrown exception has a message for readability, but the catch block will print its own message.
+  public static int getIntInput(Scanner scanner, String inputPrompt, int min, int max) { 
     while (true) { 
       try {
         System.out.printf("%s", inputPrompt);
         final int input = Integer.parseInt(scanner.nextLine());
+        
         if (input >= min && input <= max) return input;
-
-        throw new NumberFormatException();
+        throw new IllegalArgumentException("Invalid input.");
       } catch (NumberFormatException exception) {
         System.out.printf("INPUT ERROR. Only accepts values %d to %d.\n", min, max);
       }
     }
   }
 
-  // A small void utility function that is designed for increased UX.
+  // A small void utility function that is designed to increase UX.
   // Before a large portion of print statements play, this function should be called.
   // It will give the user ample time to read the previous prints before moving on to another large set of prints.
-  private static void inputBuffer() {
+  public static void inputBuffer(Scanner scanner) {
     System.out.printf("Press enter to continue. ");
     scanner.nextLine();
   }

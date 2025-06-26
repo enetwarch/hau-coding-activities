@@ -16,9 +16,11 @@ import java.util.Scanner;
 public class Job {
   @SuppressWarnings("ConvertToTryWithResources")
   public static void main(String[] args) {
+    final Scanner scanner = new Scanner(System.in);
+
     System.out.printf("INPUT VALUES\n");
-    final double hourlyPayRate = getDoubleInput("Enter pay rate for every hour: $", 0, 522511.54);
-    final double hoursWorked = getDoubleInput("Enter hours worked each week: ", 0, 168);
+    final double hourlyPayRate = Input.getDoubleInput(scanner, "Enter pay rate for every hour: $", 0, 522511.54);
+    final double hoursWorked = Input.getDoubleInput(scanner, "Enter hours worked each week: ", 0, 168);
 
     final double incomeBeforeTax = hourlyPayRate * hoursWorked * 5;
     final double incomeAfterTax = incomeBeforeTax * .86;
@@ -42,23 +44,25 @@ public class Job {
     scanner.close();
     System.exit(0);
   }
+}
 
-  // Initializes the scanner here to make it accessible throughout the entire class.
-  private static final Scanner scanner = new Scanner(System.in);
-
+// This class is here to provide utility and it contains input methods with validation.
+// The Scanner object will be passed in every function here to apply the dependency injection pattern.
+class Input {
   // A utility function that gets the user double input.
-  // This function also includes input validation which is another requirement from the instructions.
+  // This function also includes input validation for when the user does not input a double or is out of bounds.
   // Basically, the way this function works is it runs on an infinite loop until it returns a valid user input.
-  // If the user input is valid, it will print out an error message and go back to the top of the loop agian.
+  // If the user input is valid, it will print out an error message and go back to the top of the loop again.
   // Double.parseDouble() is used here to directly avoid the bugs from non-nextLine() scanner methods.
-  private static double getDoubleInput(String inputPrompt, double min, double max) { 
+  // The thrown exception has a message for readability, but the catch block will print its own message.
+  public static double getDoubleInput(Scanner scanner, String inputPrompt, double min, double max) { 
     while (true) { 
       try {
         System.out.printf("%s", inputPrompt);
         final double input = Double.parseDouble(scanner.nextLine());
         
         if (input >= min && input <= max) return input;
-        throw new NumberFormatException();
+        throw new IllegalArgumentException("Invalid input.");
       } catch (NumberFormatException exception) {
         System.out.printf("INPUT ERROR. Only accepts values %,.2f to %,.2f.\n", min, max);
       }

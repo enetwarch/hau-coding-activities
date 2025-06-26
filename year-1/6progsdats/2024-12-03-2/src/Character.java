@@ -10,20 +10,23 @@ import java.util.Scanner;
 public class Character {
   @SuppressWarnings("ConvertToTryWithResources")
   public static void main(String[] args) {
-    final char character = getCharInput("Enter a character: ");
+    final Scanner scanner = new Scanner(System.in);
+    final char character = Input.getCharInput(scanner, "Enter a character: ");
     System.out.printf("You entered: '%c'\n", character);
 
     scanner.close();
     System.exit(0);
   }
+}
 
-  // Initializes the scanner which will be used to get user input.
-  private static final Scanner scanner = new Scanner(System.in);
-
+// This class is here to provide utility and it contains input methods with validation.
+// The Scanner object will be passed in every function here to apply the dependency injection pattern.
+class Input {
   // A utility function that gets the user char input.
   // This method only prints the input prompt and returns the first character from the user input.
-  private static char getCharInput(String inputPrompt) {
+  // All trim does in this function is remove any whitespace the user might've accidentally inputted.
+  public static char getCharInput(Scanner scanner, String inputPrompt) {
     System.out.printf("%s", inputPrompt);
-    return scanner.nextLine().charAt(0);
+    return scanner.nextLine().trim().charAt(0);
   }
 }
