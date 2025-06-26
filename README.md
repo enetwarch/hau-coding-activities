@@ -31,9 +31,9 @@ This is the rough repository structure of the repository. The naming convention 
 
 ### File Naming
 
-Most files will not follow the naming convention specified in the instructions. Files will have semantic naming if the activity just consists of one file like `calculator.py`. If the activity requires multiple files working together, the file that contains the main method or entry point will be named `main.*` with * referring to any extension. Capitalization and naming for each file will ultimately depend on that language's naming convention and practices. Quizzes or sensitive activity files will not be included in this repository.
+Most files will not follow the naming convention specified in the instructions. Files will have semantic naming if the activity just consists of one file like `calculator.py`. If the activity requires multiple files working together, the file that contains the main method or entry point will be named `main.*` with * referring to any extension. Capitalization and naming for each file will ultimately depend on that language's naming convention and practices. Sensitive activity files and some quizzes will not be included in this repository.
 
-#### Code Comments 
+### Code Comments 
 
 Comments will be abundant in this codebase as it is a school activity repository. Most of these comments will explain the obvious and are often unnecessary but it is a requirement to avoid potential deductions due to lack of documentation. To make these comments less intrusive, they will be written on top of the class or function header. Inlining comments should be an absolute last resort as adding a few, let alone too many, will plague the codebase. 
 
