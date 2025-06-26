@@ -59,7 +59,7 @@ class Input {
         
         if (input >= min && input <= max) return input;
         throw new IllegalArgumentException("Invalid input.");
-      } catch (NumberFormatException exception) {
+      } catch (IllegalArgumentException exception) {
         System.out.printf("INPUT ERROR. Only accepts values %d to %d.\n", min, max);
       }
     }
