@@ -131,6 +131,7 @@ class Input {
             }
         }
     }
+    
     // A utility function that gets the user String input.
     // This method only prints the input prompt and returns the user input.
     // There are no input validations involved here because every user input is basically a string anyway.
