@@ -1,21 +1,18 @@
 # Holy Angel University Coding Activities
 
-This repository is a collection of all the coding activities we have done in [**Holy Angel University**](https://www.hau.edu.ph/). These activities were designed to help us strengthen our foundation and understanding of programming concepts through the use of practical hands-on tasks. All of the files here are **personal solutions** to the given problems from [**HAU Canvas**](https://hau.instructure.com/). Instructions are copy pasted or manually written in the [README.md](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) file of the activity directory.
+This repository is a collection of all the coding activities we have done in [**Holy Angel University**](https://www.hau.edu.ph/). These activities were designed to help us strengthen our foundation and understanding of programming concepts through the use of practical hands-on tasks. All of the files here are **personal solutions** to the given problems from [**HAU Canvas**](https://hau.instructure.com/). 
 
 ## Repository Structure
 
 ```bash
 hau-coding-activities/ # repository
 |--year-1/... # first year directory
-|--year-2/ # year level
-|  |--6oop/ # subject
-|  |  |--2025-06-16-1/ # activity year-month-date-number
-|  |  |  |--docs/ # documentation files
-|  |  |  |  |--image.png
-|  |  |  |  |--document.pdf
-|  |  |  |--src/ # source code
-|  |  |  |  |--Main.java
-|  |  |  |--README.md # activity instructions
+|--year-2/ # year level directory
+|  |--6oop/ # subject directory
+|  |  |--2025-06-16-1/ # activity year-month-date-number directory
+|  |  |  |--directory/... # additional directories
+|  |  |  |--Main.java # source code file
+|  |  |  |--File.java... # more source code files
 |  |  |--year-month-date-number/...
 |  |  |--year-month-date-number/...
 |  |  |--year-month-date-number/...
@@ -31,7 +28,7 @@ This is the rough repository structure of the repository. The naming convention 
 
 ### File Naming
 
-Most files will not follow the naming convention specified in the instructions. Files will have semantic naming if the activity just consists of one file like `calculator.py`. If the activity requires multiple files working together, the file that contains the main method or entry point will be named `main.*` with * referring to any extension. As much as possible, all classes and functions will  live in one file for easy compilation, unless the instructions explicitly mention that they have to be separate. Capitalization and naming for each file will ultimately depend on that language's naming convention and practices. Sensitive activity files and some quizzes will not be included in this repository.
+Files will have semantic naming if the activity just consists of one file like `calculator.py`. If the activity requires multiple files working together, the file that contains the main method or entry point will be named `main.*` with * referring to any extension. As much as possible, all classes and functions will  live in one file for easy compilation, unless the instructions explicitly mention that they have to be separate. Capitalization and naming for each file will ultimately depend on that language's naming convention and practices. Sensitive activity files and some quizzes will not be included in this repository.
 
 ### Code Comments 
 
