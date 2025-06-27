@@ -9,8 +9,8 @@
 def main() -> None:
   print("Weekly Pay Slip")
   employee_name: str = input_str("Employee Name: ")
-  hours_worked: int = input_int("Hours Worked (0-168): ", 0, 168)
-  overtime_hours: int = input_int("Overtime Hours (0-168): ", 0, 168)
+  hours_worked: int = input_int("Hours Worked (0-168): ", min=0, max=168)
+  overtime_hours: int = input_int("Overtime Hours (0-168): ", min=0, max=168)
   hourly_rate: float = input_float("Hourly Rate: ₱")
 
   gross_pay: float = (hours_worked * hourly_rate) + (overtime_hours * hourly_rate * 1.25)
@@ -67,7 +67,7 @@ def input_float(prompt: str, min: float = float("-inf"), max: float = float("inf
       user_input: float = float(input(prompt).strip())
       if min <= user_input <= max: return user_input
       
-      print(f"INPUT ERROR. Please input a value between {min:,d} to {max:,d}.")
+      print(f"INPUT ERROR. Please input a value between {min:,.2f} to {max:,.2f}.")
     except ValueError:
       print("INPUT ERROR. Please input a float value.")
 

@@ -63,7 +63,7 @@ class Input {
         if (input >= min && input <= max) return input;
 
         System.out.printf("INPUT ERROR. Please input a value between %,.2f to %,.2f.\n", min, max);
-      } catch (IllegalArgumentException exception) {
+      } catch (NumberFormatException exception) {
         System.out.printf("INPUT ERROR. Please input a double value.");
       }
     }

@@ -3,123 +3,135 @@
 
 # The shopping cart is initialized along with these types to help with typesafety.
 # This type basically just means a list (cart) of string and float tuples (item, cost).
-type Item = tuple[str, float]
 type Cart = list[Item]
-shopping_cart: Cart = []
 
-# This is a functional programming style function that returns a brand new cart.
-# It adheres to the paradigm's immutability and side effect reduction.
-def add_cart_item(cart: Cart, item: Item) -> Cart:
-  # Clones the passed in cart and adds an item to it.
-  new_cart: Cart = cart.copy()
-  new_cart.append(item)
+# This is the main entry point of this school activity program script.
+# The program first initializes an empty cart which will dynamically increase and decrease at runtime.
+# An infinite loop is initiated which perpetually prints out options and asks the user for the choice.
+# Based on the choice, the program will handle it differently by calling different functions.
+# There is an input buffer at the end of the loop cycle to give the user time to react to the changes.
+# Choosing the fifth option (5. Exit) will break the infinite loop and terminate the program.
+def main() -> None:
+  shopping_cart: Cart = []
 
-  # Returns the new cart back.
-  return new_cart
+  while True:
+    print("Shopping Cart:")
+    print("1. Add Item")
+    print("2. Remove Item")
+    print("3. View Cart")
+    print("4. View Cost")
+    print("5. Exit")
 
-# Another function programming style function similar to add_cart_item().
-# NOTE: This function removes all items that match the name, so it can remove multiple items with the same name.
-def remove_cart_item(cart: Cart, name: str) -> Cart:
-  # Uses list comprehension shorthand to only return a list that does not include the name provided.
-  return [item for item in cart if item[0] != name]
+    match input_int("Choose an option (1/2/3/4/5): ", min=1, max=5):
+      case 1: add_item(shopping_cart)
+      case 2: remove_item(shopping_cart)
+      case 3: view_cart(shopping_cart)
+      case 4: view_cost(shopping_cart)
+      case 5: break
+      case _: pass
 
-# A simple functional programming style function.
-# It uses the list comprehension shorthand which is basically a one-liner for loop with a return value.
-def get_item_list(cart: Cart) -> list[str]:
-  return [item[0] for item in cart]
+    input("Would you like to proceed? (Press enter)")
+    print()
 
-# Yet another function programming style function.
-# This function is slightly advanced because it uses list comprehension.
-def calculate_total_cost(cart: Cart) -> float:
-  # This list comprehension basically makes a float array from all the float values in the Item tuple.
-  # The sum function then adds all of those values together which will then be returned.
-  return sum(item[1] for item in cart)
+  print("Program terminated.")
+  exit(0)
 
-# Starts an infinite loop that will act as the interface of the program.
-while True:
-  # Prints out the options available to the user.
-  print("Shopping Cart:")
-  print("1. Add Item")
-  print("2. Remove Item")
-  print("3. View Cart")
-  print("4. Total Cost")
-  print("5. Exit")
+# This is a small class or object blueprint for the program.
+# It is basically a semantic data container for item names, and cost.
+# Way better than using tuples and trying to guess the type of the data.
+class Item:
+  def __init__(self, name: str, cost: float) -> None:
+    self.name: str = name
+    self.cost: float = cost
 
-  try:
-    # Gets the user input in integer form.
-    user_input: int = int(input("Choose an option: "))
+  # Overrides the default string representation of this object when it is inserted to prints.
+  def __str__(self) -> str:
+    return f'"{self.name}, {self.cost}"'
 
-    match user_input:
-      # Adds an item into the shopping cart.
-      case 1:
-        # An infinite loop to enable error handling.
-        while True:
-          try:
-            # Prompts the user to provide information about the item to add.
-            item_name: str = input("Input item name: ")
-            # This could cause an error if the user input is not float parseable.
-            item_cost: float = float(input("Input item cost: $"))
+# This helper function mutates the cart argument and is run if the user presses the first option.
+# The function first prompts the user about the item name & cost, and an item is created afterward.
+# The item is then appended to the cart and the successfull proccess is printed out.
+def add_item(cart: Cart) -> None:
+  name: str = input_str("Input item name: ")
+  cost: float = input_float("Input item cost: $", min=0)
 
-            # Breaks out of the infinite loop if no error is thrown.
-            break 
-          except ValueError:
-            # Catches potential errors from parsing user input string into float.
-            print("Please enter an appropriate float value for the cost.")
+  item = Item(name, cost)
+  cart.append(item)
 
-        # Adds the item to the shopping cart and lets the users know
-        shopping_cart = add_cart_item(shopping_cart, (item_name, item_cost))
-        print(f"Item (\"{item_name}\", ${item_cost:,.2f}) has been added to the shopping cart.")
+  print(f'Item ({item}) has been added to the shopping cart.')
 
-      # Removes an item in the cart.
-      # NOTE: This does not fully cover all edge-cases, but for a school activity, this is enough.
-      case 2:
-        # Asks the user what the name of the item is to be removed.
-        item_name: str = input("Input item name: ")
+# This helper function mutates the cart argument and is run if the user presses the second option.
+# The function first prompts what the name of the item to remove in the cart is.
+# The if block then looks if there are matching names in the cart using list comprehension.
+# If there are no items, the function will print that there are no item named like that in the shopping cart.
+# If there is/are items named like that, the shopping cart will get reassigned to have no items with said name.
+# The cart reassignment uses [:] to make sure the passed in cart object is mutated, and not just create a new cart.
+# The successfull removal process is then printed out by the function.
+def remove_item(cart: Cart) -> None:
+  name: str = input_str("Input item name: ")
 
-        # Checks if the item_name has matching item names in the string item tuples in the cart.
-        if item_name in get_item_list(shopping_cart):
-          # Renews the shopping cart with the removed item.
-          shopping_cart = remove_cart_item(shopping_cart, item_name)
-          print(f"Item \"{item_name}\" removed from the shopping list.")
-        else:
-          # No changes to the cart because there was no such item.
-          print(f"Cannot find item \"{item_name}\" from the shopping list.")
+  if name in [item.name for item in cart]:
+    cart[:] = [item for item in cart if item.name != name]
+    print(f'Items named "{name}" have been removed from the shopping cart.')
+  else:
+    print(f'No item named "{name}" found in the cart.')
 
-      # Views the entire cart.
-      case 3:
-        # Prints the header of this view.
-        print("Shopping Cart:")
-        
-        if not shopping_cart:
-          # Prints this out of the shopping cart is currently empty.
-          print("Your shopping cart is empty.")
-        else:
-          # Looks through the entire shopping cart and prints the "item: cost".
-          for (item_name, item_cost) in shopping_cart:
-            print(f"{item_name}: ${item_cost:,.2f}")
+# This helper function does not mutate the cart argument and is run at the third option.
+# The function just prints out empty if the cart does not have any elements with the if not cart condition.
+# The function will then print the amount if items in the cart and all of the items inside it.
+# The *cart means to individually separate the items in the list and sep="\n" means they are separated by enter space.
+def view_cart(cart: Cart) -> None:
+  if not cart:
+    print("Your shopping cart is empty.")
+  else:
+    print(f"You have {len(cart)} items in your shopping cart.")
+    print(*cart, sep="\n")
+      
+# This helper function does not mutate the cart argument and is run at the fourth option.
+# The function just prints out the total cost of all the items inside the cart.
+# It calculates the cost through list comprehension to get all item costs in a list and then pass it to the sum function.
+# The sum function takes all the elements in a list and gets the sum of all of them as the name suggests.
+def view_cost(cart: Cart) -> None:
+  print(f"Total item costs: {sum([item.cost for item in cart])}")
 
-      # Prints the total cost of all the items in the cart.
-      case 4:
-        # Calls the function responsible for calculating total cost and stores it in a variable.
-        total_cost: float = calculate_total_cost(shopping_cart)
-        print(f"Total cost: ${total_cost:,.2f}")
+# A utility function that gets the user integer input with some validation included.
+# The function validates by checking if the input is an integer and if it is in the range of arguments.
+# The arguments min and max are optional but will default to the 32-bit integer limit.
+# If the user input is found to be invalid, the function will print out a predetermined error message in the except block.
+# Since the whole function is an infinite loop, the function will just prompt the user for inputs again.
+# If the input is valid, the function simply returns the newly collect integer input from the user.
+def input_int(prompt: str, min: int = -2**31, max: int = 2**31) -> int:
+  while True:
+    try:
+      user_input: int = int(input(prompt).strip())
+      if min <= user_input <= max: return user_input
+      
+      print(f"INPUT ERROR. Please input a value between {min:,d} to {max:,d}.")
+    except ValueError:
+      print("INPUT ERROR. Please input an integer value.")
 
-      case 5:
-        # Breaks out of the interface's infinite loop.
-        break
+# A utility function that gets the user float input with some validation included.
+# The function validates by checking if the input is a float and if it is in the range of arguments.
+# The arguments min and max are optional but will default to the lowest and highest infinite values from Python.
+# If the user input is found to be invalid, the function will print out a predetermined error message in the except block.
+# Since the whole function is an infinite loop, the function will just prompt the user for inputs again.
+# If the input is valid, the function simply returns the newly collect float input from the user.
+def input_float(prompt: str, min: float = float("-inf"), max: float = float("inf")) -> float:
+  while True:
+    try:
+      user_input: float = float(input(prompt).strip())
+      if min <= user_input <= max: return user_input
+      
+      print(f"INPUT ERROR. Please input a value between {min:,.2f} to {max:,.2f}.")
+    except ValueError:
+      print("INPUT ERROR. Please input a float value.")
 
-      case _:
-        # Handles the case where the user did input an integer but it is not in the match case.
-        print("Please input an integer value between 1-5.")
-  except ValueError:
-    # Handles error in string to int parsing if the user didn't input an int.
-    print("Please input an appropriate integer value.")
+# A simple utility function that gets the user string input without any validation.
+# The strip here simply removes excess whitespace the user might've inputted.
+def input_str(prompt: str) -> str:
+  return str(input(prompt).strip())
 
-  # Gives the user ample time to look at the result or prompt before repeating the loop.
-  input("Would you like to proceed? (Press enter)")
-  # Prints an empty space after every cycle of the loop for visual separation.
-  print()
-
-# Terminates and exits the program.
-print("Program terminated.")
-exit(0)
+# Guards the file from imports and only runs main only if the interpreter is run here directly.
+# These are dunder (double underline) values that are automatically set by Python at runtime.
+if __name__ == "__main__":
+  main()

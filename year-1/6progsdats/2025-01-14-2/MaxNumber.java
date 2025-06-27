@@ -13,7 +13,7 @@ public class MaxNumber {
     final int y = 78;
     final int max = findMax(x, y);
 
-    System.out.printf("The maximum of %d and %d is: %d\n", x, y, max);
+    System.out.printf("The maximum of %,d and %,d is: %,d\n", x, y, max);
 
     System.exit(0);
   }

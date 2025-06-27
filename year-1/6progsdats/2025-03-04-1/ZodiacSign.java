@@ -125,13 +125,12 @@ class Input {
         final int input = Integer.parseInt(scanner.nextLine().trim());
         if (input >= min && input <= max) return input;
 
-        System.out.printf("INPUT ERROR. Please input a value between %d to %d.\n", min, max);
+        System.out.printf("INPUT ERROR. Please input a value between %,d to %,d.\n", min, max);
       } catch (IllegalArgumentException exception) {
         System.out.printf("INPUT ERROR. Please input an integer value.\n");
       }
     }
   }
-
   // A utility function that gets the user String input.
   // This method only prints the input prompt and returns the user input.
   // There are no input validations involved here because every user input is basically a string anyway.
