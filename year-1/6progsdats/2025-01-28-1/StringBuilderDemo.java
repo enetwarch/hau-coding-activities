@@ -11,38 +11,38 @@
 // For more details on StringBuilder, the instructions or Oracle website can help you.
 // The other file-specific functions are small and have their own descriptions.
 public class StringBuilderDemo {
-  public static void main(String[] args) {
-    final StringBuilder stringBuilder = new StringBuilder("Learning");
-    System.out.printf("Step 1: %s\n", stringBuilder);
+    public static void main(String[] args) {
+        final StringBuilder stringBuilder = new StringBuilder("Learning");
+        System.out.printf("Step 1: %s\n", stringBuilder);
 
-    stringBuilder.append(" Java");
-    System.out.printf("Step 2: %s\n", stringBuilder);
+        stringBuilder.append(" Java");
+        System.out.printf("Step 2: %s\n", stringBuilder);
 
-    stringBuilder.insert(getSubstringEndIndex(stringBuilder, "Learning"), " with StringBuilder");
-    System.out.printf("Step 3: %s\n", stringBuilder);
+        stringBuilder.insert(getSubstringEndIndex(stringBuilder, "Learning"), " with StringBuilder");
+        System.out.printf("Step 3: %s\n", stringBuilder);
 
-    stringBuilder.replace(
-      getSubstringStartIndex(stringBuilder, "StringBuilder"), 
-      getSubstringEndIndex(stringBuilder, "StringBuilder"), 
-      "String Manipulation"
-    );
-    System.out.printf("Step 4: %s\n", stringBuilder);
+        stringBuilder.replace(
+            getSubstringStartIndex(stringBuilder, "StringBuilder"), 
+            getSubstringEndIndex(stringBuilder, "StringBuilder"), 
+            "String Manipulation"
+        );
+        System.out.printf("Step 4: %s\n", stringBuilder);
 
-    stringBuilder.reverse();
-    System.out.printf("Step 5: %s\n", stringBuilder);
-  }
+        stringBuilder.reverse();
+        System.out.printf("Step 5: %s\n", stringBuilder);
+    }
 
-  // A function to get the start argument for most StringBuilder methods.
-  // It gets the starting index of the String instance based on its location in the StringBuilder.
-  // Example: "Ahh yes" (StringBuilder) and "yes" (String), it will return 4.
-  private static int getSubstringStartIndex(StringBuilder stringBuilder, String string) {
-    return stringBuilder.indexOf(string);
-  }
+    // A function to get the start argument for most StringBuilder methods.
+    // It gets the starting index of the String instance based on its location in the StringBuilder.
+    // Example: "Ahh yes" (StringBuilder) and "yes" (String), it will return 4.
+    private static int getSubstringStartIndex(StringBuilder stringBuilder, String string) {
+        return stringBuilder.indexOf(string);
+    }
 
-  // A function to get the end argument for most StringBuilder methods.
-  // It gets the ending index of the String instance based on its location in the StringBuilder.
-  // Example: "Ahh yes" (StringBuilder) and "yes" (String), it will return 7.
-  private static int getSubstringEndIndex(StringBuilder stringBuilder, String string) {
-    return stringBuilder.indexOf(string) + string.length();
-  }
+    // A function to get the end argument for most StringBuilder methods.
+    // It gets the ending index of the String instance based on its location in the StringBuilder.
+    // Example: "Ahh yes" (StringBuilder) and "yes" (String), it will return 7.
+    private static int getSubstringEndIndex(StringBuilder stringBuilder, String string) {
+        return stringBuilder.indexOf(string) + string.length();
+    }
 }

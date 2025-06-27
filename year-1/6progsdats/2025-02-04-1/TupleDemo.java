@@ -8,15 +8,15 @@
 // After that, the name, age, and tuple representation are printed which all use the instance functions declared below.
 // The program is then exited after all these steps are finished.
 public class TupleDemo {
-  public static void main(String[] args) {
-    final Pair<String, Integer> person = new Pair("Hugo", 19);
+    public static void main(String[] args) {
+        final Pair<String, Integer> person = new Pair("Hugo", 19);
 
-    System.out.printf("Name: %s\n", person.getFirst());
-    System.out.printf("Age: %d\n", person.getSecond());
-    System.out.printf("Tuple: %s\n", person);
+        System.out.printf("Name: %s\n", person.getFirst());
+        System.out.printf("Age: %d\n", person.getSecond());
+        System.out.printf("Tuple: %s\n", person);
 
-    System.exit(0);
-  }
+        System.exit(0);
+    }
 }
 
 // This class will be used as a tuple in the main method to demonstrate tuples, which this is one.
@@ -27,31 +27,31 @@ public class TupleDemo {
 // The fields here will still be named as if it is not aware of the data types it will contain.
 // They will still depend on the types inserted through the generic.
 class Pair<First, Second> {
-  private final First first;
-  private final Second second;
+    private final First first;
+    private final Second second;
 
-  // The following code will be constructor, accessor, and maybe mutator method boilerplate.
-  // In this case, there will be no mutator because the instructions didn't need it.
+    // The following code will be constructor, accessor, and maybe mutator method boilerplate.
+    // In this case, there will be no mutator because the instructions didn't need it.
 
-  protected Pair(First first, Second second) {
-    this.first = first;
-    this.second = second;
-  }
+    protected Pair(First first, Second second) {
+        this.first = first;
+        this.second = second;
+    }
 
-  public First getFirst() {
-    return this.first;
-  }
+    public First getFirst() {
+        return this.first;
+    }
 
-  public Second getSecond() {
-    return this.second;
-  }
+    public Second getSecond() {
+        return this.second;
+    }
 
-  // This method will be the string representation of any object which has a default method in Java.
-  // We use override to change that default to this explicitly declared toString() method.
-  // When there is an implicit need to turn this Pair into a String, this method will automatically be called.
-  // Printing a pair for example will automatically call toString() because prints need strings.
-  @Override 
-  public String toString() {
-    return String.format("(%s, %s)", this.first, this.second);
-  }
+    // This method will be the string representation of any object which has a default method in Java.
+    // We use override to change that default to this explicitly declared toString() method.
+    // When there is an implicit need to turn this Pair into a String, this method will automatically be called.
+    // Printing a pair for example will automatically call toString() because prints need strings.
+    @Override 
+    public String toString() {
+        return String.format("(%s, %s)", this.first, this.second);
+    }
 }

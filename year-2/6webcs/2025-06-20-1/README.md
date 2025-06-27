@@ -11,21 +11,21 @@ Brew Haven features an open brewing bar where customers can watch their coffee b
 We specialize in the following handcrafted offerings:
 
 * Espresso-Based Beverages
-  * Caraamel Macchiato
-  * Spanish Latte
-  * Flat White
+    * Caraamel Macchiato
+    * Spanish Latte
+    * Flat White
 * Specialty Filipino Coffee
-  * Sagada Arabica
-  * Kalinga Robusta
-  * Mount Apo Excelsa
+    * Sagada Arabica
+    * Kalinga Robusta
+    * Mount Apo Excelsa
 * Non-Coffee Options
-  * Matcha Latte
-  * Chai Milk Tea
-  * Calamansi Basil Cooler
+    * Matcha Latte
+    * Chai Milk Tea
+    * Calamansi Basil Cooler
 * Pastries & Sandwiches
-  * Ensaymada with Queso de Bola
-  * Adobo Pan de Sal Slider
-  * Ube Cheese Roll
+    * Ensaymada with Queso de Bola
+    * Adobo Pan de Sal Slider
+    * Ube Cheese Roll
 
 ## Popular Coffee & Cultural Events
 
