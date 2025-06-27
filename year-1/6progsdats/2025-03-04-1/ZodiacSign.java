@@ -122,12 +122,12 @@ class Input {
     while (true) { 
       try {
         System.out.printf("%s", inputPrompt);
-        final int input = Integer.parseInt(scanner.nextLine());
-        
+        final int input = Integer.parseInt(scanner.nextLine().trim());
         if (input >= min && input <= max) return input;
-        throw new IllegalArgumentException("Invalid input.");
+
+        System.out.printf("INPUT ERROR. Please input a value between %d to %d.\n", min, max);
       } catch (IllegalArgumentException exception) {
-        System.out.printf("INPUT ERROR. Only accepts values %d to %d.\n", min, max);
+        System.out.printf("INPUT ERROR. Please input an integer value.\n");
       }
     }
   }

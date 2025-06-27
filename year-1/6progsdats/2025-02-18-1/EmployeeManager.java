@@ -134,12 +134,12 @@ class Input {
     while (true) { 
       try {
         System.out.printf("%s", inputPrompt);
-        final int input = Integer.parseInt(scanner.nextLine());
-        
+        final int input = Integer.parseInt(scanner.nextLine().trim());
         if (input >= min && input <= max) return input;
-        throw new IllegalArgumentException("Invalid input.");
+
+        System.out.printf("INPUT ERROR. Please input a value between %d to %d.\n", min, max);
       } catch (IllegalArgumentException exception) {
-        System.out.printf("INPUT ERROR. Only accepts values %d to %d.\n", min, max);
+        System.out.printf("INPUT ERROR. Please input an integer value.\n");
       }
     }
   }
@@ -163,12 +163,12 @@ class Input {
     while (true) { 
       try {
         System.out.printf("%s", inputPrompt);
-        final double input = Double.parseDouble(scanner.nextLine());
-        
+        final double input = Double.parseDouble(scanner.nextLine().trim());
         if (input >= min && input <= max) return input;
-        throw new IllegalArgumentException("Invalid input.");
+
+        System.out.printf("INPUT ERROR. Please input a value between %,.2f to %,.2f.\n", min, max);
       } catch (IllegalArgumentException exception) {
-        System.out.printf("INPUT ERROR. Only accepts values %,.2f to %,.2f.\n", min, max);
+        System.out.printf("INPUT ERROR. Please input a double value.");
       }
     }
   }
@@ -185,7 +185,7 @@ class Input {
       if (input.equals("y") || input.equals("yes")) return true;
       if (input.equals("n") || input.equals("no")) return false;
 
-      System.out.printf("INPUT ERROR. Only accepts values 'y' and 'n'.\n");
+      System.out.printf("INPUT ERROR. Please input either 'y', 'yes', 'n', or 'no'.\n");
     }
   }
 }
