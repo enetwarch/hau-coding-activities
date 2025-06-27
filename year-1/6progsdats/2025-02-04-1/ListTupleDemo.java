@@ -10,7 +10,7 @@ import java.util.List;
 // This person list has 3 values with different data types, 2 Strings and 1 Integer.
 // The following print code blocks just showcases how to access the data in the list through get(int index).
 // After all of that, the program gets exited.
-public class Tuple {
+public class ListTupleDemo {
   public static void main(String[] args) {
     List<Object> person = List.of("John Doe", 25, "Software Engineer");
 

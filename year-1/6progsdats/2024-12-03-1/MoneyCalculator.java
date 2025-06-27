@@ -13,7 +13,7 @@ import java.util.Scanner;
 // Calculations will then be made on income, money spent and remaining money all based on the instruction's formula.
 // These calculated values will then be printed in a neat output.
 // The program will then finish executing, the scanner will be closed and the program will be exited.
-public class Job {
+public class MoneyCalculator {
   @SuppressWarnings("ConvertToTryWithResources")
   public static void main(String[] args) {
     final Scanner scanner = new Scanner(System.in);

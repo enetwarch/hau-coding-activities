@@ -10,7 +10,7 @@
 // Step 5: "avaJ noitalupinaM gnirtS htiw gninraeL" (Reverse the entire StringBuilder)
 // For more details on StringBuilder, the instructions or Oracle website can help you.
 // The other file-specific functions are small and have their own descriptions.
-public class Builder {
+public class StringBuilderDemo {
   public static void main(String[] args) {
     final StringBuilder stringBuilder = new StringBuilder("Learning");
     System.out.printf("Step 1: %s\n", stringBuilder);

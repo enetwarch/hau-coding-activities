@@ -2,16 +2,12 @@
 // CS-102
 
 // This class has a main or entry point for its own program.
-// It also acts as an object prototype which will be used in the main.
-// Since everything will happen in the same file, almost everything except main will be marked private.
-// First, the <angle brackets> in the class header pertains to types being passed in as arguments AKA generics.
-// These generics provide extra reusability to objects or functions because you are not locked to one particular type.
 // Diving into the program, a Pair object is initialized with String and Integer (non-primitive int) data types.
 // Pairs are tuples but for two values, meaning it can contain two values that have different or similar types.
 // In this case, the pair contains name (String) and age (Integer) and are immutable due to having no mutator methods.
 // After that, the name, age, and tuple representation are printed which all use the instance functions declared below.
 // The program is then exited after all these steps are finished.
-public class Pair<First, Second> {
+public class TupleDemo {
   public static void main(String[] args) {
     final Pair<String, Integer> person = new Pair("Hugo", 19);
 
@@ -21,26 +17,32 @@ public class Pair<First, Second> {
 
     System.exit(0);
   }
+}
 
-  // The program will use a name and age pair of data based from the instructions.
-  // The fields here will still be named as if it is not aware of the data types it will contain.
-  // They will still depend on the types inserted through the generic.
+// This class will be used as a tuple in the main method to demonstrate tuples, which this is one.
+// There are some methods here that will override the default versions from Java.
+// Angle brackets (<>) in the class header pertains to types being passed in as arguments AKA generics.
+// These generics provide extra reusability to objects or functions because you are not locked to one particular type.
+// The program will use a name and age pair of data based from the instructions.
+// The fields here will still be named as if it is not aware of the data types it will contain.
+// They will still depend on the types inserted through the generic.
+class Pair<First, Second> {
   private final First first;
   private final Second second;
 
   // The following code will be constructor, accessor, and maybe mutator method boilerplate.
   // In this case, there will be no mutator because the instructions didn't need it.
 
-  private Pair(First first, Second second) {
+  protected Pair(First first, Second second) {
     this.first = first;
     this.second = second;
   }
 
-  private First getFirst() {
+  public First getFirst() {
     return this.first;
   }
 
-  private Second getSecond() {
+  public Second getSecond() {
     return this.second;
   }
 

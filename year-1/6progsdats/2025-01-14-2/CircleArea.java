@@ -6,7 +6,7 @@
 // That calculator method calculates the area of the circle, look at the method header for more details.
 // After that, the program will print the radius and area and only print out 2 decimal places at most.
 // The program will exit afterwards as that is the final step.
-public class Circle {
+public class CircleArea {
   public static void main(String[] args) {
     final double radius = 5.5;
     final double area = calculateCircleArea(radius);

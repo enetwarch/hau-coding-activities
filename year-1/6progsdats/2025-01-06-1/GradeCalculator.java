@@ -21,7 +21,7 @@ import java.util.Scanner;
 // After the loop is broken, all students and their details will be printed out using a for loop.
 // The average grade of all students and the highest average will then be calculated and printed as well.
 // Lastly, the scanner will get closed and the program will be exited.
-public class Calculator {
+public class GradeCalculator {
   @SuppressWarnings("ConvertToTryWithResources")
   public static void main(String[] args) {
     final Scanner scanner = new Scanner(System.in);

@@ -8,7 +8,7 @@ import java.util.Scanner;
 // Most of the explanation for this program are abstracted to the different void methods below.
 // Basically, the program asks which sport you like and based on what you choose, it will give a rough description.
 // When the user presses 5 to exit, the program will close the scanner first and then get exited.
-public class Sports {
+public class FavoriteSport {
   @SuppressWarnings("ConvertToTryWithResources")
   public static void main(String[] args) {
     final Scanner scanner = new Scanner(System.in);

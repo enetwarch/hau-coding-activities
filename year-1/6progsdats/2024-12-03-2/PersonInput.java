@@ -4,13 +4,12 @@
 // Imports the Scanner class which will be used in this program.
 import java.util.Scanner;
 
-// Initializes the Person class which follows the Person.java file name.
 // This class has its own main method or entry point for the program to run.
 // The program basically just asks the user's age and name and then prints it.
 // This program has basic input validation to ensure correct data types and error handling.
 // The user can only input 0 to 123 as their age because 123 years old is the current world record.
 // After the program runs, the scanner will be closed and the program will be exited.
-public class Person {
+public class PersonInput {
   @SuppressWarnings("ConvertToTryWithResources")
   public static void main(String[] args) {
     final Scanner scanner = new Scanner(System.in);

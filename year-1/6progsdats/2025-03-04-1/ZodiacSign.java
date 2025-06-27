@@ -9,7 +9,7 @@ import java.util.Scanner;
 // Essential details will be prompted and collected from the user (name, year, month, and date of birth).
 // The program will then do some calculations and print details such as their age and Zodiac sign.
 // After all of that, the program will close the scanner and get exited.
-public class Zodiac {
+public class ZodiacSign {
   @SuppressWarnings("ConvertToTryWithResources")
   public static void main(String[] args) {
     final Scanner scanner = new Scanner(System.in);

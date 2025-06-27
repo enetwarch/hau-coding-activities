@@ -7,7 +7,7 @@
 // Max is calculated by calling in the findMax method which just returns the greater number.
 // It then prints out both the numbers and the greater number.
 // The program will exit afterward as that is the last step.
-public class Number {
+public class MaxNumber {
   public static void main(String[] args) {
     final int x = 45;
     final int y = 78;

@@ -14,7 +14,7 @@ import java.util.ArrayList;
 // The method chain on these employee objects make it easier to read and fluently modify.
 // After making all the Employees, their details are all printed out but it does not completely follow the sample output.
 // Lastly, the program exits.
-public class Employee {
+public class SalaryManager {
   public static void main(String[] args) {
     final ArrayList<Employee> employees = new ArrayList<>();
 
@@ -33,10 +33,12 @@ public class Employee {
 
     System.exit(0);
   }
+}
 
-  // These are the data fields that will be used to instantiate the objects.
-  // There are plenty of missing lines of code in here according to the instructions.
-  // The function headers will explain what the missing lines were.
+// These are the data fields that will be used to instantiate the objects.
+// There are plenty of missing lines of code in here according to the instructions.
+// The function headers will explain what the missing lines were.
+class Employee {
   private final String name;
   private final ArrayList<Double> salaries;
 

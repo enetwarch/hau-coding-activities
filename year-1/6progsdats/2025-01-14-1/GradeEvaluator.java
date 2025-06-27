@@ -10,7 +10,7 @@ import java.util.Scanner;
 // An if else if chain will then run and the program will print an evaluation based on the user's grades.
 // These evaluation messages are all based on the instructions and sample output.
 // The program will then close the scanner and be exited.
-public class Grade {
+public class GradeEvaluator {
   @SuppressWarnings("ConvertToTryWithResources")
   public static void main(String[] args) {
     final Scanner scanner = new Scanner(System.in);

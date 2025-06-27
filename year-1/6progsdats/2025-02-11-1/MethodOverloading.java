@@ -12,7 +12,7 @@ import java.util.Scanner;
 // The method that will be used will depend on the inserted arguments.
 // The main method here has a simple flow which is just a copy pasted version of a previous activity.
 // After this simple program finishes running, the scanner will be closed and the program will be exited.
-public class Overloading {
+public class MethodOverloading {
   @SuppressWarnings("ConvertToTryWithResources")
   public static void main(String[] args) {
     final Scanner scanner = new Scanner(System.in);

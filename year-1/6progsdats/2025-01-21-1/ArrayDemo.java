@@ -11,7 +11,7 @@ import java.util.Arrays;
 // Second output will print the smallest number of the array which is calculated via a method.
 // Third output will print the total value of all the elements in the array which is also calculated by a method.
 // After that, the program is exited.
-public class Array {
+public class ArrayDemo {
   public static void main(String[] args) {
     final int[] integerArray = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
 

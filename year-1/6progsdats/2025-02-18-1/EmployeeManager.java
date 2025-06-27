@@ -16,7 +16,7 @@ import java.util.Scanner;
 // The program flow is basically just: add an employee -> read the file -> exit.
 // It only fulfills the C and R in CRUD (Create, Read, Update, and Delete).
 // After that, the scanner will be close and the program will be exited.
-public class Management {
+public class EmployeeManager {
   @SuppressWarnings("ConvertToTryWithResources")
   public static void main(String[] args) {
     final Scanner scanner = new Scanner(System.in);

@@ -4,10 +4,9 @@
 // Imports the Scanner class which will be used in this program.
 import java.util.Scanner;
 
-// Initializes the Character class which follows the Character.java file name.
 // This is a basic program that gets the first character of the user input and prints it.
 // It then closes the scanner and exits afterwards.
-public class Character {
+public class CharacterInput {
   @SuppressWarnings("ConvertToTryWithResources")
   public static void main(String[] args) {
     final Scanner scanner = new Scanner(System.in);

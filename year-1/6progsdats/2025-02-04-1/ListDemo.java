@@ -14,7 +14,7 @@ import java.util.ArrayList;
 // * We can access elements in the list individually with the get() method from List objects.
 // * We loop through the list to display all students.
 // After those steps, the program will be exited.
-public class List {
+public class ListDemo {
   public static void main(String[] args) {
     final ArrayList<String> studentList = new ArrayList<>();
     System.out.printf("Student list after initialization: %s\n", studentList);

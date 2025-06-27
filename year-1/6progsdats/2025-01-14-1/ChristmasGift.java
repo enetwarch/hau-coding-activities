@@ -12,7 +12,7 @@ import java.util.Scanner;
 // Parity is checked by isEven() method and uses a ternary operator to get "even" or "odd" based on the boolean value.
 // The output mirroring the sample output will then be printed.
 // After that, the scanner will be closed and the program will be exited.
-public class Gift {
+public class ChristmasGift {
   @SuppressWarnings("ConvertToTryWithResources")
   public static void main(String[] args) {
     final Scanner scanner = new Scanner(System.in);
