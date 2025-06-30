@@ -32,7 +32,7 @@ Files will have semantic naming if the activity just consists of one file like `
 
 ### Code Comments 
 
-Comments will be abundant in this codebase as it is a school activity repository. Most of these comments will explain the obvious and are often unnecessary but it is a requirement to avoid potential deductions due to lack of documentation. To make these comments less intrusive, they will be written on top of the class or function header. Inlining comments should be an absolute last resort as adding a few, let alone too many, will plague the codebase. 
+Comments will be abundant in this codebase as it is a school activity repository. Most of these comments will explain the obvious and are often unnecessary but it is a requirement to avoid potential deductions due to lack of documentation. To make these comments less intrusive, they will be written on top of the class or function header. Inlining comments should be an absolute last resort as adding a few, let alone too many, will plague the codebase. With all of that in mind however, some activites do not have comments at all as the instructions did not require it or it is done in [CodeChum](https://codechum.com/) or other coding platforms.
 
 ## License
 
