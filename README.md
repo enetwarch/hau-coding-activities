@@ -1,6 +1,6 @@
 # Holy Angel University Coding Activities
 
-This repository is a collection of all the coding activities we have done in [**Holy Angel University**](https://www.hau.edu.ph/). These activities were designed to help us strengthen our foundation and understanding of programming concepts through the use of practical hands-on tasks. All of the files here are **personal solutions** to the given problems from [**HAU Canvas**](https://hau.instructure.com/). 
+This repository is a collection of all the coding activities we have done in [**Holy Angel University**](https://www.hau.edu.ph/). These activities were designed to help us strengthen our foundation and understanding of programming concepts through the use of practical hands-on tasks. All of the files here are **personal solutions** to the given problems from [**HAU Canvas**](https://hau.instructure.com/).
 
 ## Repository Structure
 
@@ -28,9 +28,9 @@ This is the rough repository structure of the repository. The naming convention 
 
 ### File Naming
 
-Files will have semantic naming if the activity just consists of one file like `calculator.py`. If the activity requires multiple files working together, the file that contains the main method or entry point will be named `main.*` with * referring to any extension. As much as possible, all classes and functions will  live in one file for easy compilation, unless the instructions explicitly mention that they have to be separate. Capitalization and naming for each file will ultimately depend on that language's naming convention and practices. Sensitive activity files and some quizzes will not be included in this repository.
+Files will have semantic naming if the activity just consists of one file like `calculator.py`. If the activity requires multiple files working together, the file that contains the main method or entry point will be named `main.*` with \* referring to any extension. As much as possible, all classes and functions will live in one file for easy compilation, unless the instructions explicitly mention that they have to be separate. Capitalization and naming for each file will ultimately depend on that language's naming convention and practices. Sensitive activity files and some quizzes will not be included in this repository.
 
-### Code Comments 
+### Code Comments
 
 Comments will be abundant in this codebase as it is a school activity repository. Most of these comments will explain the obvious and are often unnecessary but it is a requirement to avoid potential deductions due to lack of documentation. To make these comments less intrusive, they will be written on top of the class or function header. Inlining comments should be an absolute last resort as adding a few, let alone too many, will plague the codebase. With all of that in mind however, some activites do not have comments at all as the instructions did not require it or it is done in [CodeChum](https://codechum.com/) or other coding platforms.
 
