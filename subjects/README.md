@@ -18,7 +18,7 @@ hau-coding-activities/ # repository
 |  |--6webcs/...
 ```
 
-The [`subjects/`](./subjects/). Subject folders will pertain to the subject abbreviation with [`6oop/`](./year-2/6oop/) as an example. The `year-month-date-number` directory consists of numerical values which should end up like [`2025-06-16-1/`](./year-2/6oop/2025-06-16/), meaning it is an activity that happened on **June 16, 2025**. The last number in the `year-month-date-number` directory indicates the activity number, which in most cases will be **1** because most days will only have one activity.
+This is the general structure of the [`subjects/`](./) directory. Subject folders will pertain to the subject abbreviation with [`6oop/`](./6oop/) as an example. The `year-month-date-number` directory consists of numerical values which should end up like [`2025-06-16-1/`](./6oop/2025-06-16/), meaning it is an activity that happened on **June 16, 2025**. The last number in the `year-month-date-number` directory indicates the activity number, which in most cases will be **1** because most days will only have one activity.
 
 ## File Naming
 
