@@ -1,0 +1,146 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: Quicksand;
+  src: url("../font/Quicksand-Regular.woff") format("woff") url("../font/Quicksand-Regular.ttf") format("truetype");
+}
+
+/* HTML and Body Styles */
+
+html {
+  background-color: hsl(27, 72%, 72%);
+}
+
+body {
+  background-color: ivory;
+  color: rgb(91, 91, 91);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Heading Styles */
+
+h1 {
+  background-color: rgb(222, 128, 60);
+  color: white;
+  font-size: 2.2em;
+}
+
+h2 {
+  color: white;
+  background-color: rgb(235, 177, 131);
+}
+
+h1,
+h2 {
+  font-family: Quicksand, sans-serif;
+  letter-spacing: 0.1em;
+  padding-inline: 5px;
+}
+
+article#about_tss h1 {
+  background-color: rgb(222, 128, 60);
+  color: white;
+}
+
+article#about_tss h2 {
+  background-color: rgb(235, 177, 131);
+  color: white;
+}
+
+article.syllabus h1,
+article.syllabus h2 {
+  background-color: rgb(255, 165, 255);
+  color: rgb(101, 101, 101);
+}
+
+/* Aside and Blockquote Styles */
+
+aside {
+  font-size: 0.8em;
+}
+
+aside blockquote {
+  color: rgb(232, 165, 116);
+  margin: 20px 5px;
+  quotes: "\201C" "\201D";
+}
+
+aside blockquote::before {
+  content: open-quote;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+aside blockquote::after {
+  content: close-quote;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+/* Navigation Styles */
+
+nav {
+  font-size: 0.8em;
+}
+
+nav > ul {
+  line-height: 2em;
+  list-style-type: none;
+  padding-left: 5px;
+}
+
+nav > ul > li.newgroup {
+  margin-top: 20px;
+}
+
+nav > ul > li > a:link,
+nav > ul > li > a:visited {
+  color: rgb(151, 151, 151);
+  text-decoration: none;
+}
+
+nav > ul > li > a:hover,
+nav > ul > li > a:active {
+  color: rgb(255, 64, 255);
+  text-decoration: underline;
+}
+
+/* List Styles */
+
+article.syllabus ol {
+  list-style-type: upper-roman;
+}
+
+article.syllabus ol ol {
+  list-style-type: lower-alpha;
+}
+
+article.syllabus ol ol ol {
+  list-style-type: decimal;
+}
+
+article#about_tss ul li:first-of-type {
+  list-style-image: url("../img/runicon.png");
+}
+
+article#about_tss ul li:nth-of-type(2) {
+  list-style-image: url("../img/bikeicon.png");
+}
+
+article#about_tss ul li:last-of-type {
+  list-style-image: url("../img/swimicon.png");
+}
+
+/* Footer Styles */
+
+body > footer address {
+  background-color: rgb(222, 120, 60);
+  color: rgba(255, 255, 255, 0.7);
+  font:
+    normal small-caps bold 0.9em/3em Quicksand,
+    Verdana,
+    Geneva,
+    sans-serif;
+}
